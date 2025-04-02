@@ -83,16 +83,102 @@ CREATE TABLE FUND (
  FOREIGN KEY (AssetID) REFERENCES ASSET(AssetID)
 );
 
--- Create PORTFOLIO Table (Decomposed into Portfolio1 and PortfolioFeeStructure)
+-- Create PORTFOLIO Table (Decomposed into Portfolio1 and R3TURNS)
 CREATE TABLE Portfolio1 (
  Phone VARCHAR(15),
  PID VARCHAR(20),
  MarketValue DECIMAL(15, 2),
  InceptionDate DATE,
+ FEE (15,2),
  AnnualizedReturn DECIMAL(5, 2),
  PRIMARY KEY (PID, Phone), -- Composite primary key (order corrected)
  FOREIGN KEY (Phone) REFERENCES INVESTOR(Phone)
 );
+
+CREATE TABLE R3TURNS (
+ MarketValue DECIMAL(15, 2) PRIMARY KEY,
+ InceptionDate DATE,
+ AnnualizedReturn DECIMAL(5, 2),
+ PRIMARY KEY (MarketValue, InceptionDate),
+);
+
+-- Create STOCK_IN_PORTFOLIO Table
+CREATE TABLE STOCK_IN_PORTFOLIO (
+ ID VARCHAR(20) PRIMARY KEY,
+ PID VARCHAR(20),
+ Phone VARCHAR(15),
+ StartDate DATE,
+ AllocationRatio DECIMAL(5, 2),
+ PostTradeCO VARCHAR(100),
+ AssetID VARCHAR(20),
+ FOREIGN KEY (AssetID) REFERENCES STOCK(AssetID),
+ FOREIGN KEY (PID, Phone) REFERENCES Portfolio1(PID, Phone) -- References Portfolio1
+);
+
+-- Create BOND_IN_PORTFOLIO Table
+CREATE TABLE BOND_IN_PORTFOLIO (
+ ID VARCHAR(20) PRIMARY KEY,
+ PID VARCHAR(20),
+ Phone VARCHAR(15),
+ StartDate DATE,
+ AllocationRatio DECIMAL(5, 2),
+ PostTradeCO VARCHAR(100),
+ AssetID VARCHAR(20),
+ FOREIGN KEY (AssetID) REFERENCES BOND(AssetID),
+ FOREIGN KEY (PID, Phone) REFERENCES Portfolio1(PID, Phone) --References Portfolio1
+);
+
+-- Create FUND_IN_PORTFOLIO Table
+CREATE TABLE FUND_IN_PORTFOLIO (
+ ID VARCHAR(20) PRIMARY KEY,
+ PID VARCHAR(20),
+ Phone VARCHAR(15),
+ StartDate DATE,
+ AllocationRatio DECIMAL(5, 2),
+ PostTradeCO VARCHAR(100),
+ AssetID VARCHAR(20),
+ FOREIGN KEY (AssetID) REFERENCES FUND(AssetID),
+ FOREIGN KEY (PID, Phone) REFERENCES Portfolio1(PID, Phone) --References Portfolio1
+);
+
+-- Create INVESTED_VALUE Table
+CREATE TABLE INVESTED_VALUE (
+ Phone VARCHAR(15),
+ PID VARCHAR(20),
+ Date DATE,
+ Amount DECIMAL(15, 2),
+ PRIMARY KEY (Phone, PID, Date),
+ FOREIGN KEY (PID, Phone) REFERENCES Portfolio1(PID, Phone) --References Portfolio1
+);
+
+-- Create UNREALIZED_GAIN_LOSS Table
+CREATE TABLE UNREALIZED_GAIN_LOSS (
+ Phone VARCHAR(15) NOT NULL,
+ PID VARCHAR(20) NOT NULL,
+ Date DATE NOT NULL,
+ Amount DECIMAL(15, 2),
+ PRIMARY KEY (Phone, PID, Date),
+ FOREIGN KEY (PID, Phone) REFERENCES Portfolio1(PID, Phone) --References Portfolio1
+);
+
+-- Create TRANSACTION Table (Decomposed into Transaction1 and Transaction_Fees)
+CREATE TABLE TRANSATION1 (
+ ID VARCHAR(20),
+ Date DATE,
+ PID VARCHAR(20),
+ Phone VARCHAR(15),
+ Type VARCHAR(50),
+ PRIMARY KEY (ID, Date),
+ FOREIGN KEY (PID, Phone) REFERENCES Portfolio1(PID, Phone) --References Portfolio1
+);
+
+
+CREATE TABLE TRANSACTION_FEES (
+ Type VARCHAR(50) PRIMARY KEY,
+ Fee DECIMAL(5, 2)
+);
+
+
 
 
 
