@@ -212,19 +212,19 @@ INSERT INTO INVESTED_VALUE (Phone, PID, Date, Amount) VALUES
 
 -- Populate UNREALIZED_GAIN_LOSS Table
 INSERT INTO UNREALIZED_GAIN_LOSS (Phone, PID, Date, Amount) VALUES
-('81510001', 'P001', '2023-01-01', 2000.00),      -- Sherlock Holmes (Conservative) - P001
-('81510001', 'P002', '2023-01-01', 3000.00),     -- Sherlock Holmes (Moderate) - P002
-('81510002', 'P003', '2023-01-01', 15000.00),     -- Harry Potter (Aggressive) - P003
-('81510003', 'P004', '2023-01-01', 1000.00),      -- James Bond (Conservative) - P004
-('81510004', 'P005', '2023-01-01', 4000.00),     -- Jack Sparrow (Moderate) - P005
-('81510005', 'P006', '2023-01-01', 18000.00),    -- Jay Gatsby (Aggressive) - P006
-('81510005', 'P007', '2023-01-01', 6000.00),     -- Jay Gatsby (Moderate) - P007
-('81510006', 'P008', '2023-01-01', 1500.00),      -- Grey Gandalf (Conservative) - P008
-('81510007', 'P009', '2023-01-01', 5000.00),     -- Victor Frankenstein (Moderate) - P009
-('81510008', 'P010', '2023-01-01', 2500.00),      -- Louis Litt (Conservative) - P010
-('81510009', 'P011', '2023-01-01', 20000.00),    -- John Reacher (Aggressive) - P011
-('81510009', 'P012', '2023-01-01', 7000.00),     -- John Reacher (Moderate) - P012
-('81510010', 'P013', '2023-01-01', 6500.00);    -- Arya Stark (Moderate) - P013
+('81510001', 'P001', '2024-04-01', 2000.00),      -- Sherlock Holmes (Conservative) - P001
+('81510001', 'P002', '2024-04-01', -3000.00),     -- Sherlock Holmes (Moderate) - P002
+('81510002', 'P003', '2024-11-01', -15000.00),     -- Harry Potter (Aggressive) - P003
+('81510003', 'P004', '2024-05-01', 1000.00),      -- James Bond (Conservative) - P004
+('81510004', 'P005', '2024-05-01', 4000.00),     -- Jack Sparrow (Moderate) - P005
+('81510005', 'P006', '2024-07-01', -18000.00),    -- Jay Gatsby (Aggressive) - P006
+('81510005', 'P007', '2024-07-01', 6000.00),     -- Jay Gatsby (Moderate) - P007
+('81510006', 'P008', '2024-08-01', 1500.00),      -- Grey Gandalf (Conservative) - P008
+('81510007', 'P009', '2024-03-01', -5000.00),     -- Victor Frankenstein (Moderate) - P009
+('81510008', 'P010', '2024-02-01', 2500.00),      -- Louis Litt (Conservative) - P010
+('81510009', 'P011', '2024-09-01', -20000.00),    -- John Reacher (Aggressive) - P011
+('81510009', 'P012', '2024-09-01', 7000.00),     -- John Reacher (Moderate) - P012
+('81510010', 'P013', '2024-12-01', 6500.00);    -- Arya Stark (Moderate) - P013
 
 -- Populate TRANSACTION1 Table
 INSERT INTO TRANSATION1 (ID, Date, PID, Phone, Type) VALUES
@@ -248,9 +248,6 @@ INSERT INTO TRANSACTION_FEES (Type, Fee) VALUES
 ('Rebalance', 0.4),
 ('Sell', 0.7),
 ('Topup', 0.2);
-
-
-
 
 
 
