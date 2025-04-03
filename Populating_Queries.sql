@@ -142,6 +142,22 @@ INSERT INTO Portfolio1 (Phone, PID, MarketValue, InceptionDate, AnnualizedReturn
 ('81510009', 'P012', 125000.00, '2021-04-12', 7.2),    -- John Reacher (Moderate)
 ('81510010', 'P013', 118000.00, '2020-09-25', 6.9);    -- Arya Stark (Moderate)
 
+-- Populate R3TURNS Table
+INSERT INTO R3TURNS (MarketValue, InceptionDate, AnnualizedReturn) VALUES
+(95000.00, '2020-03-15', 5.2),   -- Sherlock Holmes (Conservative) - P001
+(105000.00, '2021-06-20', 6.0),  -- Sherlock Holmes (Moderate) - P002
+(150000.00, '2019-09-01', 9.8),   -- Harry Potter (Aggressive) - P003
+(88000.00, '2022-01-10', 4.8),    -- James Bond (Conservative) - P004
+(110000.00, '2020-11-05', 6.5),   -- Jack Sparrow (Moderate) - P005
+(160000.00, '2018-07-22', 10.2),  -- Jay Gatsby (Aggressive) - P006
+(120000.00, '2022-03-16', 7.0),   -- Jay Gatsby (Moderate) - P007
+(92000.00, '2021-02-28', 5.0),    -- Grey Gandalf (Conservative) - P008
+(115000.00, '2020-08-18', 6.8),   -- Victor Frankenstein (Moderate) - P009
+(90000.00, '2022-05-01', 5.5),    -- Louis Litt (Conservative) - P010
+(170000.00, '2017-12-01', 11.0),  -- John Reacher (Aggressive) - P011
+(125000.00, '2021-04-12', 7.2),  -- John Reacher (Moderate) - P012
+(118000.00, '2020-09-25', 6.9);  -- Arya Stark (Moderate) - P013
+
 -- Populate BOND_IN_PORTFOLIO Table
 INSERT INTO BOND_IN_PORTFOLIO (ID, PID, Phone, StartDate, AllocationRatio, PostTradeCO, AssetID) VALUES
 ('BIP001', 'P001', '81510001', '2020-03-16', 70.0, 'DBS Bonds', 'BND170'),  -- Sherlock Holmes (Conservative) - Vanguard Total Bond Market ETF (BND)
