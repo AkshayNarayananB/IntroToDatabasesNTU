@@ -226,6 +226,29 @@ INSERT INTO UNREALIZED_GAIN_LOSS (Phone, PID, Date, Amount) VALUES
 ('81510009', 'P012', '2023-01-01', 7000.00),     -- John Reacher (Moderate) - P012
 ('81510010', 'P013', '2023-01-01', 6500.00);    -- Arya Stark (Moderate) - P013
 
+-- Populate TRANSACTION1 Table
+INSERT INTO TRANSATION1 (ID, Date, PID, Phone, Type) VALUES
+('T001', '2023-03-15', 'P001', '81510001', 'Buy'),
+('T002', '2023-04-10', 'P002', '81510001', 'Rebalance'),
+('T003', '2023-05-20', 'P003', '81510002', 'Sell'),
+('T004', '2023-06-01', 'P004', '81510003', 'Buy'),
+('T005', '2023-06-15', 'P005', '81510004', 'Topup'),
+('T006', '2023-07-01', 'P006', '81510005', 'Sell'),
+('T007', '2023-07-15', 'P007', '81510005', 'Rebalance'),
+('T008', '2023-08-01', 'P008', '81510006', 'Buy'),
+('T009', '2023-08-15', 'P009', '81510007', 'Topup'),
+('T010', '2023-09-01', 'P010', '81510008', 'Sell'),
+('T011', '2023-09-15', 'P011', '81510009', 'Buy'),
+('T012', '2023-10-01', 'P012', '81510009', 'Rebalance'),
+('T013', '2023-10-15', 'P013', '81510010', 'Topup');
+
+-- Populate TRANSACTION_FEES Table
+INSERT INTO TRANSACTION_FEES (Type, Fee) VALUES
+('Buy', 0.5),
+('Rebalance', 0.4),
+('Sell', 0.7),
+('Topup', 0.2);
+
 
 
 
