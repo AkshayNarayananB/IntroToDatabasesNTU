@@ -9,8 +9,7 @@ WITH MonthlyTopups AS (
  WHERE
  t.Type = 'TOPUP'
  AND YEAR(t.Date) = 2024
- AND DAY(t.Date) <= 5 -- Assuming "beginning of month" means
-within first 5 days
+ AND DAY(t.Date) <= 5 -- Assuming "beginning of month" means within first 5 days
  GROUP BY
  t.Phone,
  t.PID,
