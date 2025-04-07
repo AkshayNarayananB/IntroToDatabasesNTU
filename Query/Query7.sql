@@ -3,12 +3,12 @@ WITH InvestorAge AS (
  i.Phone,
  i.Name,
  i.Gender,
- DATEDIFF(YEAR, i.DoB, '2025-03-29') AS Age,
+ DATEDIFF(YEAR, i.DoB, '2025-04-07') AS Age,
  i.AnnualIncome
  FROM
  INVESTOR i
  WHERE
- DATEDIFF(YEAR, i.DoB, '2025-03-29') BETWEEN 20 AND 29
+ DATEDIFF(YEAR, i.DoB, '2025-04-07') BETWEEN 20 AND 29
 ),
 InvestmentPerformance AS (
  SELECT
@@ -16,7 +16,7 @@ InvestmentPerformance AS (
  ia.Name,
  ia.Gender,
  ia.Age,
- COALESCE(ugl.Amount, 0) AS UnrealizedGainLoss,
+ ugl.Amount AS UnrealizedGainLoss,
  p.AnnualizedReturn
  FROM
  InvestorAge ia
@@ -25,8 +25,7 @@ InvestmentPerformance AS (
  LEFT JOIN
  UNREALIZED_GAIN_LOSS ugl ON ia.Phone = ugl.Phone
  AND p.PID = ugl.PID
-AND ugl.Date = '2024-03-31' -- Most
-recent data point
+ -- AND ugl.Date = '2025-04-01' -- Most recent data point
 )
 SELECT
  Gender,
