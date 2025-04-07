@@ -2,14 +2,14 @@
 INSERT INTO INVESTOR (Phone, Name, Gender, DoB, AnnualIncome, Company) VALUES
 ('81510001', 'Sherlock Holmes', 'M', '1985-04-12', 85000.00, 'DBS'),
 ('81510002', 'Harry Potter', 'M', '1990-08-25', 92000.00, 'OCBC'),
-('81510003', 'James Bond', 'M', '1980-08-25', 92000.00, 'Continental'),
-('81510004', 'Jack Sparrow', 'M', '1990-08-25', 92000.00, 'OCBC'),
-('81510005', 'Jay Gatsby', 'M', '1990-08-25', 92000.00, 'OCBC'),
+('81510003', 'James Bond', 'M', '1990-03-02', 92000.00, 'OCBC'),
+('81510004', 'Jack Sparrow', 'M', '1990-08-26', 92000.00, 'OCBC'),
+('81510005', 'Jay Gatsby', 'M', '1990-08-22', 92000.00, 'OCBC'),
 ('81510006', 'Grey Gandalf', 'M', '1990-08-25', 92000.00, 'DBS'),
-('81510007', 'Victor Frankenstein', 'M', '1990-08-25', 92000.00, 'Continental'),
-('81510008', 'Louis Litt', 'M', '1990-08-25', 92000.00, 'Bosch'),
-('81510009', 'John Reacher', 'M', '1978-12-14', 110000.00, 'Bosch'),
-('81510010', 'Arya Stark', 'M', '1978-12-14', 110000.00, 'Bosch');
+('81510007', 'Victor Frankenstein', 'M', '1990-08-25', 92000.00, 'DBS'),
+('81510008', 'Louis Litt', 'F', '2000-08-25', 92000.00, 'Bosch'),
+('81510009', 'John Reacher', 'F', '2001-12-01', 110000.00, 'Bosch'),
+('81510010', 'Arya Stark', 'M', '1999-01-14', 110000.00, 'Bosch');
 
 -- Populate RISK_TOLERANCE Table
 INSERT INTO RISK_TOLERANCE (Phone, RiskLevel, Q1A, Q2A, Q3A, Q4A, Q5A) VALUES
@@ -79,12 +79,6 @@ INSERT INTO ASSET (AssetID, Name, Price) VALUES
 
 -- Populate STOCK Table (Adding 10 more)
 INSERT INTO STOCK (AssetID, P_ERatio, EPS, EBITDA) VALUES
-('STK820', 85.2, 10.5, 9500000000.00),   -- TSLA (Tesla Inc.)
-('STK392', 120.8, 8.9, 30000000000.00),  -- NVDA (Nvidia Corporation)
-('STK445', 95.5, 12.1, 45000000000.00),  -- AMZN (Amazon.com Inc.)
-('STK991', 30.1, 7.8, 110000000000.00),  -- AAPL (Apple Inc.)
-('STK273', 38.7, 9.3, 90000000000.00),  -- MSFT (Microsoft Corporation)
-('STK427', 42.0, 5.5, 250000000.00),    -- SYND (Syndicate Corp - Example)
 ('STK101', 22.5, 4.8, 15000000000.00),  -- JPM (JPMorgan Chase & Co.)
 ('STK202', 28.3, 6.1, 18000000000.00),  -- UNH (UnitedHealth Group Incorporated)
 ('STK303', 25.0, 5.2, 12000000000.00),  -- PG (The Procter & Gamble Company)
@@ -111,10 +105,6 @@ INSERT INTO BOND (AssetID, InterestRate, MaturityDate) VALUES
 
 -- Populate FUND Table (Adding 10 more)
 INSERT INTO FUND (AssetID, ExpenseRatio, DividendYield) VALUES
-('FND999', 0.03, 1.5),   -- Vanguard S&P 500 ETF (VOO)
-('FND192', 0.68, 2.8),   -- Emerging Markets ETF
-('FND007', 0.06, 3.2),   -- Vanguard High Dividend Yield ETF (VYM)
-('FND772', 0.52, 4.1),   -- Dodge & Cox Income Fund (DODIX)
 ('FND111', 0.15, 2.0),  -- Schwab U.S. Broad Market ETF (SCHB)
 ('FND222', 0.75, 3.5),  -- ARK Innovation ETF (ARKK)
 ('FND333', 0.20, 1.8),  -- iShares Core MSCI EAFE ETF (IEFA)
@@ -133,14 +123,14 @@ INSERT INTO Portfolio1 (Phone, PID, MarketValue, InceptionDate, AnnualizedReturn
 ('81510002', 'P003', 150000.00, '2019-09-01', 9.8),     -- Harry Potter (Aggressive)
 ('81510003', 'P004', 88000.00, '2022-01-10', 4.8),      -- James Bond (Conservative)
 ('81510004', 'P005', 110000.00, '2020-11-05', 6.5),     -- Jack Sparrow (Moderate)
-('81510005', 'P006', 160000.00, '2018-07-22', 10.2),    -- Jay Gatsby (Aggressive)
+('81510005', 'P006', 160000.00, '2024-07-22', 10.2),    -- Jay Gatsby (Aggressive)
 ('81510005', 'P007', 120000.00, '2022-03-16', 7.0),     -- Jay Gatsby (Moderate)
 ('81510006', 'P008', 92000.00, '2021-02-28', 5.0),      -- Grey Gandalf (Conservative)
 ('81510007', 'P009', 115000.00, '2020-08-18', 6.8),     -- Victor Frankenstein (Moderate)
-('81510008', 'P010', 90000.00, '2022-05-01', 5.5),      -- Louis Litt (Conservative)
+('81510008', 'P010', 90000.00, '2024-05-01', 5.5),      -- Louis Litt (Conservative)
 ('81510009', 'P011', 170000.00, '2017-12-01', 11.0),    -- John Reacher (Aggressive)
 ('81510009', 'P012', 125000.00, '2021-04-12', 7.2),    -- John Reacher (Moderate)
-('81510010', 'P013', 118000.00, '2020-09-25', 6.9);    -- Arya Stark (Moderate)
+('81510010', 'P013', 118000.00, '2024-09-25', 6.9);    -- Arya Stark (Moderate)
 
 -- Populate R3TURNS Table
 INSERT INTO R3TURNS (MarketValue, InceptionDate, AnnualizedReturn) VALUES
@@ -149,14 +139,14 @@ INSERT INTO R3TURNS (MarketValue, InceptionDate, AnnualizedReturn) VALUES
 (150000.00, '2019-09-01', 9.8),   -- Harry Potter (Aggressive) - P003
 (88000.00, '2022-01-10', 4.8),    -- James Bond (Conservative) - P004
 (110000.00, '2020-11-05', 6.5),   -- Jack Sparrow (Moderate) - P005
-(160000.00, '2018-07-22', 10.2),  -- Jay Gatsby (Aggressive) - P006
+(160000.00, '2024-07-22', 10.2),  -- Jay Gatsby (Aggressive) - P006
 (120000.00, '2022-03-16', 7.0),   -- Jay Gatsby (Moderate) - P007
 (92000.00, '2021-02-28', 5.0),    -- Grey Gandalf (Conservative) - P008
 (115000.00, '2020-08-18', 6.8),   -- Victor Frankenstein (Moderate) - P009
-(90000.00, '2022-05-01', 5.5),    -- Louis Litt (Conservative) - P010
+(90000.00, '2024-05-01', 5.5),    -- Louis Litt (Conservative) - P010
 (170000.00, '2017-12-01', 11.0),  -- John Reacher (Aggressive) - P011
 (125000.00, '2021-04-12', 7.2),  -- John Reacher (Moderate) - P012
-(118000.00, '2020-09-25', 6.9);  -- Arya Stark (Moderate) - P013
+(118000.00, '2024-09-25', 6.9);  -- Arya Stark (Moderate) - P013
 
 -- Populate BOND_IN_PORTFOLIO Table
 INSERT INTO BOND_IN_PORTFOLIO (ID, PID, Phone, StartDate, AllocationRatio, PostTradeCO, AssetID) VALUES
@@ -188,11 +178,11 @@ INSERT INTO FUND_IN_PORTFOLIO (ID, PID, Phone, StartDate, AllocationRatio, PostT
 
 -- Populate STOCK_IN_PORTFOLIO Table
 INSERT INTO STOCK_IN_PORTFOLIO (ID, PID, Phone, StartDate, AllocationRatio, PostTradeCO, AssetID) VALUES
-('SIP001', 'P003', '81510002', '2019-09-02', 70.0, 'Tiger Brokers', 'STK820'),  -- Harry Potter (Aggressive)
-('SIP002', 'P006', '81510005', '2018-07-23', 45.0, 'Saxo Markets', 'STK445'), -- Jay Gatsby (Aggressive)
-('SIP003', 'P011', '81510009', '2017-12-02', 75.0, 'FSMOne', 'STK991'), -- John Reacher (Aggressive)
-('SIP004', 'P002', '81510001', '2021-06-21', 0.0, 'Tiger Brokers', 'STK991'), -- Sherlock Holmes (Moderate)
-('SIP005', 'P007', '81510005', '2022-03-17', 60.0, 'Saxo Markets', 'STK101'); -- Jay Gatsby (Moderate)
+('SIP001', 'P003', '81510002', '2019-09-02', 70.0, 'Tiger Brokers', 'STK101'),  -- Harry Potter (Aggressive)
+('SIP002', 'P006', '81510005', '2018-07-23', 45.0, 'Saxo Markets', 'STK101'), -- Jay Gatsby (Aggressive)
+('SIP003', 'P011', '81510009', '2017-12-02', 75.0, 'FSMOne', 'STK202'), -- John Reacher (Aggressive)
+('SIP004', 'P002', '81510001', '2021-06-21', 0.0, 'Tiger Brokers', 'STK303'), -- Sherlock Holmes (Moderate)
+('SIP005', 'P007', '81510005', '2022-03-17', 60.0, 'Saxo Markets', 'STK010'); -- Jay Gatsby (Moderate)
 
 -- Populate INVESTED_VALUE Table
 INSERT INTO INVESTED_VALUE (Phone, PID, Date, Amount) VALUES
@@ -217,7 +207,7 @@ INSERT INTO UNREALIZED_GAIN_LOSS (Phone, PID, Date, Amount) VALUES
 ('81510002', 'P003', '2024-11-01', -15000.00),     -- Harry Potter (Aggressive) - P003
 ('81510003', 'P004', '2024-05-01', 1000.00),      -- James Bond (Conservative) - P004
 ('81510004', 'P005', '2024-05-01', 4000.00),     -- Jack Sparrow (Moderate) - P005
-('81510005', 'P006', '2024-07-01', -18000.00),    -- Jay Gatsby (Aggressive) - P006
+('81510005', 'P006', '2024-07-01', -1000.00),    -- Jay Gatsby (Aggressive) - P006
 ('81510005', 'P007', '2024-07-01', 6000.00),     -- Jay Gatsby (Moderate) - P007
 ('81510006', 'P008', '2024-08-01', 1500.00),      -- Grey Gandalf (Conservative) - P008
 ('81510007', 'P009', '2024-03-01', -5000.00),     -- Victor Frankenstein (Moderate) - P009
@@ -227,20 +217,32 @@ INSERT INTO UNREALIZED_GAIN_LOSS (Phone, PID, Date, Amount) VALUES
 ('81510010', 'P013', '2024-12-01', 6500.00);    -- Arya Stark (Moderate) - P013
 
 -- Populate TRANSACTION1 Table
-INSERT INTO TRANSATION1 (ID, Date, PID, Phone, Type) VALUES
-('T001', '2023-03-15', 'P001', '81510001', 'Buy'),
-('T002', '2023-04-10', 'P002', '81510001', 'Rebalance'),
-('T003', '2023-05-20', 'P003', '81510002', 'Sell'),
-('T004', '2023-06-01', 'P004', '81510003', 'Buy'),
-('T005', '2023-06-15', 'P005', '81510004', 'Topup'),
-('T006', '2023-07-01', 'P006', '81510005', 'Sell'),
-('T007', '2023-07-15', 'P007', '81510005', 'Rebalance'),
-('T008', '2023-08-01', 'P008', '81510006', 'Buy'),
-('T009', '2023-08-15', 'P009', '81510007', 'Topup'),
-('T010', '2023-09-01', 'P010', '81510008', 'Sell'),
-('T011', '2023-09-15', 'P011', '81510009', 'Buy'),
-('T012', '2023-10-01', 'P012', '81510009', 'Rebalance'),
-('T013', '2023-10-15', 'P013', '81510010', 'Topup');
+INSERT INTO TRANSACTION1 (ID, Date, PID, Phone, Type) VALUES
+('T001', '2024-03-15', 'P001', '81510001', 'Buy'),
+('T002', '2024-04-10', 'P002', '81510001', 'Rebalance'),
+('T003', '2024-05-20', 'P003', '81510002', 'Sell'),
+('T004', '2024-06-01', 'P004', '81510003', 'Buy'),
+('T005', '2024-06-15', 'P005', '81510004', 'Topup'),
+('T006', '2024-07-01', 'P006', '81510005', 'Sell'),
+('T007', '2024-07-15', 'P007', '81510005', 'Rebalance'),
+('T008', '2024-08-01', 'P008', '81510006', 'Buy'),
+('T009', '2024-08-15', 'P009', '81510007', 'Topup'),
+('T010', '2024-09-01', 'P010', '81510008', 'Sell'),
+('T011', '2024-09-15', 'P011', '81510009', 'Buy'),
+('T012', '2024-10-01', 'P012', '81510009', 'Rebalance'),
+('T013', '2024-10-15', 'P013', '81510010', 'Topup'),
+('T014', '2024-01-05', 'P002', '81510001', 'Topup'),
+('T015', '2024-02-04', 'P002', '81510001', 'Topup'),
+('T016', '2024-03-02', 'P002', '81510001', 'Topup'),
+('T017', '2024-04-05', 'P002', '81510001', 'Topup'),
+('T018', '2024-05-01', 'P002', '81510001', 'Topup'),
+('T019', '2024-06-02', 'P002', '81510001', 'Topup'),
+('T020', '2024-07-02', 'P002', '81510001', 'Topup'),
+('T021', '2024-08-03', 'P002', '81510001', 'Topup'),
+('T022', '2024-09-01', 'P002', '81510001', 'Topup'),
+('T023', '2024-10-01', 'P002', '81510001', 'Topup'),
+('T024', '2024-11-01', 'P002', '81510001', 'Topup'),
+('T025', '2024-12-04', 'P002', '81510001', 'Topup');
 
 -- Populate TRANSACTION_FEES Table
 INSERT INTO TRANSACTION_FEES (Type, Fee) VALUES
@@ -248,20 +250,3 @@ INSERT INTO TRANSACTION_FEES (Type, Fee) VALUES
 ('Rebalance', 0.4),
 ('Sell', 0.7),
 ('Topup', 0.2);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
